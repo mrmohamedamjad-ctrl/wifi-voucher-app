@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 import YAML from 'yamljs';
 import swaggerUi from 'swagger-ui-express';
 
-import authRoutes from './routes.auth.js';
+import authRoutes from './auth.js';
 import voucherRoutes from './routes.vouchers.js';
 import paymentRoutes from './routes.payments.js';
 import expenseRoutes from './routes.expenses.js';
