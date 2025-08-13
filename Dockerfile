@@ -2,12 +2,15 @@
 FROM node:20-alpine
 
 WORKDIR /app
+
 COPY package.json package-lock.json* ./
 RUN npm install --omit=dev || npm install --only=prod
 
-COPY src ./src
-RUN mkdir -p data
+# Copy all files (except those in .dockerignore)
+COPY . .
 
+# No need to create /data, since we use ./app.db in container
 ENV PORT=8080
 EXPOSE 8080
-CMD ["node", "src/index.js"]
+
+CMD ["node", "index.js"]
