@@ -13,7 +13,4 @@ services:
     value: /data/app.db
   - key: PORT
     value: 8080
-  disk:
-    name: data
-    mountPath: /data
-    sizeGB: 1
+ 
