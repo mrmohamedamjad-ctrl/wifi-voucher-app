@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - JWT_SECRET=${JWT_SECRET:-devsecret_change_me}
+      - DB_FILE=/data/app.db
+    volumes:
+      - dbdata:/data
+    restart: unless-stopped
+volumes:
+  dbdata:
